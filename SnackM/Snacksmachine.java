@@ -1,7 +1,9 @@
 import java.util.HashMap;
 class Snacksmachine{
+    // atrribute 
+    private String Name;
+
     private HashMap<String,Snacks> snacks;
-    // private Snacks [] snacks;
     private double balance;
 
 
@@ -20,6 +22,8 @@ class Snacksmachine{
     public void checkbalance(){     
             System.out.println("Your Machine Balance :"+this.balance);
     }
+
+    // Determine all insert possibility in this Method
     public double pickSnacks(String keybad,double money){
 
         if(this.snacks.get(keybad) ==null){
@@ -70,14 +74,24 @@ class Snacksmachine{
         }
 
     }
+
+    //setter for Balance
     public void setBalance(double balance) {
         this.balance = balance;
     }
+        //setter forSnacks
     public void setSnacks(HashMap<String,Snacks> snacks) {
         this.snacks = snacks;
     }
+
+    // Editing single snack by 
     public void setSnack( Snacks snack , String keybad) {
         this.snacks.put(keybad, snack);
+    }
+    
+    // retrive single snack by 
+    public Snacks getSnack( Snacks snack , String keybad) {
+        return this.snacks.get(keybad);
     }
     public double getBalance() {
         return balance;
@@ -85,7 +99,9 @@ class Snacksmachine{
     public HashMap<String,Snacks> getSnacks() {
         return snacks;
     }
-
+    public String getName() {
+        return Name;
+    }   
 
 
 }

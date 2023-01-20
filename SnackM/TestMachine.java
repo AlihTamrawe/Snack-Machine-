@@ -5,9 +5,11 @@ public class TestMachine {
     
 
     public static void main(String[] args) {
-
-        Cards c1 = new Cards(50);
+        //declare Machine
+        Payment Card1 = new Cards() ;
         Snacksmachine mach1;
+
+
         Snacks sn1 = new Snacks("Cheetos","1A",2,0.20);
         Snacks sn2 = new Snacks("Dertos","5A",15,0.50);
 
@@ -111,10 +113,10 @@ public class TestMachine {
             System.out.println(check);
             if(snacks.get(keypad)!=null){
             if(check.equals("c" )){
-                c1.withdrawbalance(snacks.get(keypad).getPrice());
+                Card1.withdraw(snacks.get(keypad).getPrice());
 
                  if(mach1.pickSnacks(keypad,snacks.get(keypad).getPrice())==-1){
-                c1.depositebalance(snacks.get(keypad).getPrice());
+                 Card1.depsite(snacks.get(keypad).getPrice());
                 }
 
             }else{

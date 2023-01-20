@@ -1,32 +1,37 @@
-public class Cards {
-    private double balance;
-    private String currency ;
+public class Cards extends Payment {
+ 
+    public Cards(double balance, String carrancy, String type) {
+        super(balance, carrancy, type);
+    }
+
     public Cards(){
-        balance = 0.0;
-        this.currency = "USD";
+        super( 0.0, "USD","Coin");
+       
+        
 
     }
-    public Cards(double balance){
-        this.balance = balance ;
-        this.currency = "USD";
-
-    }
-    public void withdrawbalance(double val){
-        if( this.balance-val>0.01){
-            this.balance-=val;
+     
+   
+ 
+    @Override
+    public void withdraw(double val) {
+        if( getBalance()-val>0.01){
+            this.setBalance(getBalance()-val);
             System.out.print("withdraw successful from your following value :"+val+"$");
-            System.out.println("your Balance "+this.balance);
+            System.out.println("your Balance "+this.getBalance());
         }
         else{
             System.out.print("withdraw failed Check your Balance please !");
 
         }
 
+        
     }
-    public void depositebalance(double val){
-        this.balance+=val;
+    @Override
+    public void depsite(double val) {
+        setBalance(getBalance()+val);
         System.out.print("we Charge your Card Again !");
-
+        
     }
     
 }

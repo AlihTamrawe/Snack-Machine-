@@ -1,20 +1,20 @@
-import java.lang.ProcessBuilder.Redirect.Type;
+public class Notes extends Payment {
 
-public class Coins extends Payment {
-     public Coins(double value, String symbol) {
-     super(value, symbol, symbol);
+    public Notes(double balance, String carrancy, String type) {
+        super(balance, carrancy, type);
+        //TODO Auto-generated constructor stub
     }
-    private String symbol ;
+
     @Override
     public void withdraw(double val) {
         // TODO Auto-generated method stub
         
     }
+
     @Override
     public void depsite(double val) {
         // TODO Auto-generated method stub
         
     }
-
     
 }
