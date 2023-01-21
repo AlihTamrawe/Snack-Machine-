@@ -1,0 +1,27 @@
+classes , attributes and method:
+
+
+Snacks Machine :
+    Name,
+    balance,
+
+
+
+
+Money:
+    Currancy,
+    Balance,
+
+Cards inherted from Money:
+
+
+
+
+
+Coins inherted from Money:
+
+
+
+Notes(Cash) inherted from Money:
+
+
