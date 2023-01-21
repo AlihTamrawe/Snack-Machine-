@@ -8,20 +8,20 @@ Snacks Machine :
 
 
 
-Money:
+Payment (Money):
     Currancy,
     Balance,
 
-Cards inherted from Money:
+Cards inherted from Payment:
 
 
 
 
 
-Coins inherted from Money:
+Coins inherted from Payment:
 
 
 
-Notes(Cash) inherted from Money:
+Notes(Cash) inherted from Payment:
 
 

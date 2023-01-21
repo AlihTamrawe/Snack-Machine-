@@ -1,3 +1,4 @@
+package Models;
 import java.lang.ProcessBuilder.Redirect.Type;
 
 public class Coins extends Payment {

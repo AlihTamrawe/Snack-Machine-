@@ -1,3 +1,6 @@
+package Models;
+
+
 public class Snacks {
     private String name;
     private String keysymbol;

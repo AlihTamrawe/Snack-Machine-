@@ -1,3 +1,4 @@
+package Models;
 public class Cards extends Payment {
  
     public Cards(double balance, String carrancy, String type) {

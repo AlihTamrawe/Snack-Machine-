@@ -1,5 +1,9 @@
+package Views;
+
 import java.util.HashMap;
-import java.util.*;
+import java.util.Scanner;
+import Models.*;
+import Controller.*;
 
 public class TestMachine {
     

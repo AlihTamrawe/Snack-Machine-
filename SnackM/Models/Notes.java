@@ -1,3 +1,4 @@
+package Models;
 public class Notes extends Payment {
 
     public Notes(double balance, String carrancy, String type) {

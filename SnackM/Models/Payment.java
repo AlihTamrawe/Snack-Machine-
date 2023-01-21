@@ -1,3 +1,4 @@
+package Models;
 public abstract class Payment {
     private double balance;
     private String Carrancy;

@@ -1,5 +1,8 @@
+package Controller;
 import java.util.HashMap;
-class Snacksmachine{
+
+import Models.*;;
+public class Snacksmachine{
     // atrribute 
     private String Name;
 
