@@ -1,13 +1,11 @@
-package Views;
+package Views.com;
 
+ 
 import java.util.HashMap;
 import java.util.Scanner;
-import Models.Payment;
-import Models.Snacks;
-import Models.Cards;
-import Models.Coins;
-
-import Controller.Snacksmachine;
+import Models.com.*;
+ 
+import Controller.com.*;;
 
 public class TestMachine {
     

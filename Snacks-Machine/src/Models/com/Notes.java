@@ -1,4 +1,4 @@
-package Models;
+package Models.com;
 public class Notes extends Payment {
 
     public Notes(double balance, String carrancy, String type) {
