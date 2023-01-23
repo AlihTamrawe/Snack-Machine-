@@ -7,7 +7,7 @@ public class Cards extends Payment {
     }
 
     public Cards(){
-        super( 0.0, "USD","Coin");
+        super( 0.0, "USD","Card");
        
         
 

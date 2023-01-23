@@ -12,7 +12,7 @@ public class TestMachine {
 
     public static void main(String[] args) {
         //declare Machine
-        Payment Card1 = new Cards() ;
+        Payment Card1 = new Cards(10,"USD","Card") ;
         Snacksmachine mach1;
 
 
@@ -121,7 +121,7 @@ public class TestMachine {
             if(check.equals("c" )){
                 Card1.withdraw(snacks.get(keypad).getPrice());
 
-                 if(mach1.pickSnacks(keypad,snacks.get(keypad).getPrice())==-1){
+                 if(mach1.pickItem(keypad,snacks.get(keypad).getPrice())==-1){
                  Card1.depsite(snacks.get(keypad).getPrice());
                 }
 
@@ -130,7 +130,7 @@ public class TestMachine {
             System.out.println("insert Money: ");
             try{
               money = Double.parseDouble(sc.nextLine());
-              mach1.pickSnacks(keypad,money);
+              mach1.pickItem(keypad,money);
 
         }catch(Exception e){
 

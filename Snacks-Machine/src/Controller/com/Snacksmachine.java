@@ -1,15 +1,17 @@
 package Controller.com;
 
 import java.util.HashMap;
+import java.util.List;
 
+ import Factory.VendingMachine;
 import Models.com.*;
-public class Snacksmachine{
+public class Snacksmachine  implements VendingMachine {
     // atrribute 
     private String Name;
 
     private HashMap<String,Snacks> snacks;
     private double balance;
-
+    
 
     public Snacksmachine(HashMap<String, Snacks> snacks, double balance) {
         this.snacks = snacks;
@@ -27,8 +29,8 @@ public class Snacksmachine{
             System.out.println("Your Machine Balance :"+this.balance);
     }
 
-    // Determine all insert possibility in this Method
-    public double pickSnacks(String keybad,double money){
+	@Override
+    public double pickItem(String keybad,double money){
 
         if(this.snacks.get(keybad) ==null){
             System.out.println("You entered out of Range Keypad try again ");
@@ -105,7 +107,14 @@ public class Snacksmachine{
     }
     public String getName() {
         return Name;
-    }   
+    }
+
+
+ 
+
+
+	 
+	 
 
 
 }
