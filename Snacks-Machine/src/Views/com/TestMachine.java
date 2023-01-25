@@ -12,56 +12,77 @@ public class TestMachine {
 
     public static void main(String[] args) {
         //declare Machine
-        Payment Card1 = new Cards(10,"USD","Card") ;
         Snacksmachine mach1;
+        
+        
+        //cards
+        Payment Card1 = new Cards(100,"USD","Card") ;
+        Payment Card2 = new Cards(2000,"USD","Card") ;
+
+        //coins
+        Payment coin10=new Coins(0.10, "10c");
+        Payment coin20=new Coins(0.20, "20c");
+        Payment coin50=new Coins(0.50, "50c");
+        Payment coin1=new Coins(1, "$");
+        //notes
+        Payment Note20 = new Notes(20,"USD","$");
+        Payment Note50 = new Notes(50,"USD","$");
 
 
+        
+
+
+        
+        //Snacks filling manually
         Snacks sn1 = new Snacks("Cheetos","1A",2,0.20);
         Snacks sn2 = new Snacks("Dertos","5A",15,0.50);
 
-        Snacks sn3 = new Snacks("Meetos","10A",15,0.75);
+        Snacks sn3 = new Snacks("Meetos","10A",15,0.10);
 
-        Snacks sn4 = new Snacks("Snikars","15A",15,0.75);
+        Snacks sn4 = new Snacks("Snikars","15A",15,1);
 
         Snacks sn5 = new Snacks("BONPON","20A",15,1);
 
-        Snacks sn6 = new Snacks("Raphilo","1C",15,1);
+        Snacks sn6 = new Snacks("Raphilo","1C",15,.2);
 
         Snacks sn7 = new Snacks("Galaxy","2C",15,0.50);
 
 
-        Snacks sn8 = new Snacks("NumperOne","4C",15,0.75);
-        Snacks sn9 = new Snacks("today","12C",15,0.75);
+        Snacks sn8 = new Snacks("NumperOne","4C",15,0.10);
+        Snacks sn9 = new Snacks("today","12C",15,1);
 
-        Snacks sn10 = new Snacks("freeze","24C",15,0.75);
-        Snacks sn11 = new Snacks("bial","1D",2,0.20);
-        Snacks sn12 = new Snacks("goss","5D",15,0.50);
+        Snacks sn10 = new Snacks("freeze","24C",15,1);
+        Snacks sn11 = new Snacks("bial","1D",2,1.5);
+        Snacks sn12 = new Snacks("goss","5D",15,1.70);
 
-        Snacks sn13 = new Snacks("situy","10D",15,0.75);
+        Snacks sn13 = new Snacks("situy","10D",15,0.70);
 
-        Snacks sn14 = new Snacks("valhals","18D",15,0.75);
+        Snacks sn14 = new Snacks("valhals","18D",15,0.5);
 
         Snacks sn15 = new Snacks("shocko","29D",15,1);
 
-        Snacks sn16 = new Snacks("dorliana","6F",15,25);
+        Snacks sn16 = new Snacks("dorliana","6F",15,.20);
 
-        Snacks sn17 = new Snacks("hamama","9F",15,0.25);
+        Snacks sn17 = new Snacks("hamama","9F",15,0.1);
 
 
-        Snacks sn18 = new Snacks("filssq","15F",15,0.75);
-        Snacks sn19 = new Snacks("halpino","17F",15,0.75);
+        Snacks sn18 = new Snacks("filssq","15F",15,2);
+        Snacks sn19 = new Snacks("halpino","17F",15,0.5);
 
-        Snacks sn20 = new Snacks("futaaq","21F",15,0.75);
+        Snacks sn20 = new Snacks("futaaq","21F",15,0.5);
         Snacks sn21 = new Snacks("ytus","1G",2,0.20);
         Snacks sn22 = new Snacks("moplik","5G",15,0.50);
 
-        Snacks sn23 = new Snacks("goills","16G",15,0.65);
+        Snacks sn23 = new Snacks("goills","16G",15,0.5);
 
-        Snacks sn24 = new Snacks("doooa","23G",15,0.95);
+        Snacks sn24 = new Snacks("doooa","23G",15,0.1);
 
         Snacks sn25 = new Snacks("noew","30G",15,1.20);
 
         HashMap<String,Snacks> snacks=new HashMap<String, Snacks>();
+        
+        
+        
         snacks.put(sn1.getKeysymbol(), sn1);
         snacks.put(sn2.getKeysymbol(), sn2);
         snacks.put(sn3.getKeysymbol(), sn3);
@@ -90,6 +111,8 @@ public class TestMachine {
 
 
         mach1 = new Snacksmachine(snacks,50);
+        
+        
         Scanner sc = new Scanner(System.in);
 
 
@@ -113,31 +136,102 @@ public class TestMachine {
 
             System.out.println("Pick one  as Symbol using keypad");
             String keypad = sc.nextLine();
-            System.out.println("Card press c or  Coins press any thing   ");
+            System.out.println("price of "+snacks.get(keypad).getName()+" : "+snacks.get(keypad).getPrice()+"$");
+            System.out.println("Card press c or N for Notes or  S for Coins, press any thing to Cancel  ");
+            double coinValue=0,noteValue=0;
 
             check =sc.nextLine().toString();
             System.out.println(check);
             if(snacks.get(keypad)!=null){
-            if(check.equals("c" )){
+            if(check.equals("c")||check.equals("C" ) ){
                 Card1.withdraw(snacks.get(keypad).getPrice());
 
                  if(mach1.pickItem(keypad,snacks.get(keypad).getPrice())==-1){
                  Card1.depsite(snacks.get(keypad).getPrice());
                 }
 
-            }else{
+            }else
+            if(check.equals("s" )||check.equals("S" )){
 
-            System.out.println("insert Money: ");
+            System.out.println("insert Coins  like 10c, 20c, 50c,1$ :");
+            
             try{
-              money = Double.parseDouble(sc.nextLine());
-              mach1.pickItem(keypad,money);
+            	 
+              String s =  (sc.nextLine().toString());
+              
+              switch (s) {
+			case "10c":
+				coinValue =coin10.getBalance();
+				break;
+			case "20c":
+				coinValue=coin20.getBalance();
+
+				break;
+
+			case "50c":
+				coinValue=coin50.getBalance();
+
+				break;
+			case "1$":
+				coinValue=coin1.getBalance();
+
+				break;
+ 
+
+			default:
+	           coinValue=-1;
+				break;
+			}
+              
+              if(coinValue!=-1)
+              mach1.pickItem(keypad,coinValue);
+              else
+              {
+            	  System.out.println("you inserted Wrong Value");
+              }
 
         }catch(Exception e){
 
         }
             
                 }
-    }else{
+    }else
+    	if(check.equals("N")||check.equals("n")){
+    		
+    	 System.out.println("insert Notes  like 20$, 50$ :");
+         
+         try{
+         	 
+           String s =  (sc.nextLine().toString());
+           
+           switch (s) {
+			case "20$":
+				noteValue =Note20.getBalance();
+				break;
+			case "50":
+				noteValue=Note50.getBalance();
+
+				break;
+ 
+			default:
+				noteValue=-1;
+				break;
+			}
+           
+           if(noteValue!=-1)
+           mach1.pickItem(keypad,noteValue);
+           else
+           {
+         	  System.out.println("you inserted Wrong Value");
+           }
+
+     }catch(Exception e){
+
+     }
+         
+    				
+    			}
+            else{
         System.out.println("You entered out of Range Keypad try again ");
 
     }
